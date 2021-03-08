@@ -1,7 +1,5 @@
 <?php
-include_once('conectP.php');
-$database = new Prestamo;
-$conec = $database->db();
+include_once('../conec.php');
 
 //$query = 'SELECT * FROM prestamos';
 $query = "SELECT * 
@@ -13,7 +11,7 @@ $query = "SELECT *
 $sent = $conec->prepare($query);
 $sent->execute();
 $prestamos = $sent->fetchAll();
-// var_dump($users);
+//var_dump($prestamos);
 
 ?>
 
@@ -31,7 +29,7 @@ $prestamos = $sent->fetchAll();
 <body>
     <ul>
         <li><a href="">Prestamos</a></li>
-        <li><a href="registerP.php">Nuevo</a></li>
+        <li><a href="register.php">Nuevo</a></li>
        
     </ul>
     <table>

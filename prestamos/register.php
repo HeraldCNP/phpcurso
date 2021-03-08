@@ -1,11 +1,7 @@
 <?php
-include_once('conectP.php');
+include_once('../conec.php');
 
 #Conexión con la base de datos
-$database = new Prestamo();
-$conec= $database->db();
-
-
 $us = 'SELECT * FROM users';
 $sent = $conec->prepare($us);
 $sent->execute();
@@ -18,13 +14,7 @@ $sent->execute();
 $vehiculos = $sent->fetchAll();
 //var_dump($vehiculos);
 
-//$prestamos = new Prestamo();
-if (isset($_POST) && !empty($_POST)) {
-    $vehiculo_id = $_POST['vehiculos'];
-    $usuario_id = $_POST['usuarios'];
-    $fecha = $_POST['fecha'];
-    $res = $database->create($vehiculo_id, $usuario_id, $fecha);
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +28,7 @@ if (isset($_POST) && !empty($_POST)) {
 </head>
 
 <body>
-    <form method="POST">
+    <form method="POST" action="registerP.php">
         <label for="modelo">Modelo</label>
         <br>
         <?php
