@@ -7,7 +7,7 @@
         $sent = $conec->prepare($query);
         $sent->execute(array($id));
         $user = $sent->fetch();
-        
+        var_dump($user);
     }
 ?>
 

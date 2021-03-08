@@ -1,7 +1,7 @@
 <?php
 $link = 'mysql:host=localhost;dbname=curso';
 $user = 'root';
-$pass = '';
+$pass = 'root';
 try {
     $conec = new PDO($link, $user, $pass);
     // foreach($conec->query('SELECT * from FOO') as $fila) {
