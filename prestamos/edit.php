@@ -1,7 +1,5 @@
 <?php
-include_once('conectP.php');
-$database = new Prestamo;
-$conec = $database->db();
+include_once('../conec.php');
 
 if ($_GET['id']) {
     $id = $_GET['id'];
@@ -23,12 +21,6 @@ $sent = $conec->prepare($veh);
 $sent->execute();
 $vehiculos = $sent->fetchAll();
 
-if ($_POST) {
-    $vehiculo_id = $_POST['vehiculos'];
-    $usuario_id = $_POST['usuarios'];
-    $fecha = $_POST['fecha'];
-    $res = $database->update($vehiculo_id, $usuario_id, $fecha, $id);
-}
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +34,7 @@ if ($_POST) {
 </head>
 
 <body>
-    <form method="POST">
+    <form method="POST" action="editP.php">
         <label for="modelo">Modelo</label>
         <br>
         <?php
@@ -76,7 +68,8 @@ if ($_POST) {
 
         ?>
         <br>
-        <input type="date" name="fecha" id="fecha">
+        <input type="date" name="fecha" id="fecha" value="<?php echo $prestamo['fecha'] ?>">
+        <input type="hidden" name="id" id="id" value="<?php echo $prestamo['id_prestamo'] ?>">
         <br>
         <input type="submit" value="Registrar">
     </form>

@@ -42,8 +42,8 @@ $prestamos = $sent->fetchAll();
                 <td> <?php echo $prestamo['modelo'] ?> </td>
                 <td> <?php echo $prestamo['email'] ?> </td>
                 <td> 
-                    <a href="editPrestamo.php?id=<?php echo $prestamo['id_prestamo'] ?>"><i class="far fa-edit"></i></a>
-                    <a href="deletePrestamo.php?id=<?php echo $prestamo['id_prestamo'] ?>"><i class="far fa-trash-alt"></i></a>
+                    <a href="edit.php?id=<?php echo $prestamo['id_prestamo'] ?>"><i class="far fa-edit"></i></a>
+                    <a href="delete.php?id=<?php echo $prestamo['id_prestamo'] ?>"><i class="far fa-trash-alt"></i></a>
                 </td>
             </tr>
         <?php } ?>

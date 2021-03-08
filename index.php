@@ -9,7 +9,7 @@
 <body>
     <ul>
         <li><a href="indexU.php">Usuarios</a></li>
-        <li><a href="indexP.php">Prestamos</a></li>
+        <li><a href="prestamos/index.php">Prestamos</a></li>
     </ul>
 </body>
 </html>
