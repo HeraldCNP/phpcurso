@@ -54,6 +54,7 @@ $vehiculos = $sent->fetchAll();
 
         ?>
         <br>
+        <label>Fecha</label>
         <input type="date" name="fecha" id="fecha">
         <br>
         <input type="submit" value="Registrar">
